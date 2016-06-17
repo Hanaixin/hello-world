@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <title>首页</title>
+    <link rel="stylesheet" href="/css/css.css"/>
+
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <h3 class="title">滴滴平台</h3>
+    </header>
+    <section class="main">
+        <div id="carousel" class="carousel">
+            <ul class="items" style="width: 300%;">
+                <li>
+                    <img class="img-response" src="image/index-banner1.png" alt=""/>
+                </li>
+                <li>
+                    <img class="img-response" src="image/index-banner2.png" alt=""/>
+                </li>
+                <li>
+                    <img class="img-response" src="image/index-banner3.png" alt=""/>
+                </li>
+            </ul>
+            <ul class="points">
+                <li class=""></li>
+                <li class=""></li>
+                <li class=""></li>
+            </ul>
+        </div>
+
+
+            <ul class="table index-list">
+                <li>
+                    <a href="">
+                        <img src="image/index1.png" alt=""/>
+                        <span>创业项目</span>
+                    </a>
+                    </li>
+                <li>    <a href="">
+                        <img src="image/index2.png" alt=""/>
+                        <span>平台采风</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="image/index3.png" alt=""/>
+                        <span>报名流程</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="table index-list">
+                <li>
+                    <a href="">
+                        <img src="image/index4.png" alt=""/>
+                        <span>客户管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="image/index5.png" alt=""/>
+                        <span>财务管理</span>
+                    </a>
+                 </li>
+                <li>
+                    <a href="">
+                        <img src="image/index6.png" alt=""/>
+                        <span>新闻公告</span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="table index-list">
+                <li>
+                    <a href="">
+                        <img src="image/index7.png" alt=""/>
+                        <span>工程案例</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="image/index8.png" alt=""/>
+                        <span>修改密码</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="image/index9.png" alt=""/>
+                        <span>注册客户</span>
+                    </a>
+                </li>
+            </ul>
+
+
+
+    </section>
+    <footer class="footer table">
+        <a class="nav-index active" href="index.html">
+            <i></i>
+            <span>首页</span>
+        </a>
+        <a class="nav-project " href="project.html">
+            <i></i>
+            <span>创业项目</span>
+        </a>
+        <a class="nav-process " href="process.html">
+            <i></i>
+            <span>报名流程</span>
+        </a>
+        <a class="nav-platform " href="platform.html">
+            <i></i>
+            <span>平台风采</span>
+        </a>
+        <a class="nav-user " href="user.html">
+            <i></i>
+            <span>我的滴滴</span>
+        </a>
+
+    </footer>
+    <script type="text/javascript">
+        carousel();
+
+        function carousel(){
+            var index=0;
+            var container=document.getElementById('carousel');
+            var item_ele=container.firstElementChild;
+            var items=item_ele.children;
+            item_ele.style.width=100*items.length+'%';
+            var controls=container.lastElementChild.children;
+
+            setInterval(function(){
+                index=index+1<items.length?index+1:0;
+                for(var i=0;i<controls.length;i++){
+                    controls[i].classList.remove('active');
+                }
+                controls[index].classList.add('active');
+                item_ele.style.webkitTransform='translate3d(-'+index*100.00/items.length+'%,0,0)';
+                item_ele.style.transform='translate3d(-'+index*100.00/items.length+'%,0,0)';
+            }, 3000);
+
+        }
+
+
+    </script>
+</div>
+</body>
+</html>
